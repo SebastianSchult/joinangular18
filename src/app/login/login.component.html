@@ -1,1 +1,38 @@
-<p>login works!</p>
+<main aria-labelledby="loginHeading" class="login-container">
+    <!-- Overlay-Component hier einfügen -->
+    
+    <mat-card class="login-card">
+      <header class="login-header">
+        <img src="img/logo-medium_blue.png" 
+             alt="Join Logo" 
+             class="logo"
+             aria-hidden="true">
+        
+        <a routerLink="/signup" 
+           class="signup-link"
+           aria-label="Navigate to sign up page">
+          Not a join user yet?
+          <button mat-flat-button color="primary">Sign up</button>
+        </a>
+      </header>
+  
+      <h1 id="loginHeading" class="visually-hidden">Login</h1>
+      
+      <form [formGroup]="loginForm" 
+            (ngSubmit)="onSubmit()"
+            aria-labelledby="loginFormHeading">
+        <!-- Formularfelder hier -->
+      </form>
+      
+      <footer class="login-footer">
+        <a routerLink="/privacy" 
+           aria-label="Open privacy policy">
+          Privacy policy
+        </a>
+        <a routerLink="/legal" 
+           aria-label="Open legal notice">
+          Legal notice
+        </a>
+      </footer>
+    </mat-card>
+  </main>
