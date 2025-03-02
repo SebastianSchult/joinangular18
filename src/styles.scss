@@ -1,4 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+}
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Open Sans", sans-serif; }
+
+:root {
+    --clr-main: #4589ff;
+    --clr-text-menu: #42526e;
+    --clr-text-good-morning: #2a3647;
+    --clr-text-menu-hover: #e3eeff;
+    --clr-button-todo: #d2e3ff;
+    --clr-text-medium-blue: #005dff;
+    --clr-input-focus: #0d99ff;
+    --clr-icon: #a8a8a8;
+    --clr-style-lightgrey: #d1d1d1;
+    --clr-style-lightblue: #29abe2;
+  }
+
+  .mat-icon {
+    font-family: 'Material Icons' !important;
+  }
+
+  .d-none {
+    display: none;
+  }

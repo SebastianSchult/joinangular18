@@ -1,38 +1,129 @@
+<mat-card-header class="login-header">
+  <div class="joinLogoBlue">
+    <img
+      src="img/logo-medium_blue.png"
+      alt="Join Logo"
+      class="logo"
+      aria-hidden="true"
+    />
+  </div>
+  <div class="signUpField">
+    <span>Not a join user yet?</span>
+    <a
+      routerLink="/signup"
+      class="signup-link"
+      aria-label="Navigate to sign up page"
+    >
+      <button mat-flat-button color="primary">Sign up</button>
+    </a>
+  </div>
+</mat-card-header>
+
 <main aria-labelledby="loginHeading" class="login-container">
-    <!-- Overlay-Component hier einfügen -->
-    
-    <mat-card class="login-card">
-      <header class="login-header">
-        <img src="img/logo-medium_blue.png" 
-             alt="Join Logo" 
-             class="logo"
-             aria-hidden="true">
-        
-        <a routerLink="/signup" 
-           class="signup-link"
-           aria-label="Navigate to sign up page">
-          Not a join user yet?
-          <button mat-flat-button color="primary">Sign up</button>
-        </a>
-      </header>
-  
-      <h1 id="loginHeading" class="visually-hidden">Login</h1>
-      
-      <form [formGroup]="loginForm" 
-            (ngSubmit)="onSubmit()"
-            aria-labelledby="loginFormHeading">
-        <!-- Formularfelder hier -->
-      </form>
-      
-      <footer class="login-footer">
-        <a routerLink="/privacy" 
-           aria-label="Open privacy policy">
-          Privacy policy
-        </a>
-        <a routerLink="/legal" 
-           aria-label="Open legal notice">
-          Legal notice
-        </a>
-      </footer>
-    </mat-card>
-  </main>
+  <mat-card class="login-card">
+    <div class="login-page">
+      <div class="login-box">
+        <div class="h1LoginBox">
+          <h1 class="loginH1" id="loginFormHeading">Log in</h1>
+          <div class="horizontalH1Underline"></div>
+        </div>
+        <form
+          [formGroup]="loginForm"
+          (ngSubmit)="onSubmit()"
+          aria-labelledby="loginFormHeading"
+          class="loginForm"
+        >
+          <mat-form-field class="login-input-field" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="Email"
+              formControlName="email"
+              required
+              type="email"
+              aria-label="Email input"
+            />
+            <mat-icon matSuffix>mail</mat-icon>
+            <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+              Email is required
+            </mat-error>
+            <mat-error
+              *ngIf="
+                loginForm.get('email')?.hasError('email') &&
+                !loginForm.get('email')?.hasError('required')
+              "
+            >
+              Not a valid email
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="login-input-field" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              placeholder="Password"
+              formControlName="password"
+              required
+              type="password"
+              aria-label="Password input"
+            />
+            <mat-icon matSuffix aria-hidden="true">lock</mat-icon>
+            <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+              Password is required
+            </mat-error>
+          </mat-form-field>
+
+          <div id="loginCheckbox" class="checkboxBox">
+            <mat-checkbox
+              formControlName="rememberMe"
+              aria-label="Remember me checkbox"
+            >
+              Remember me
+            </mat-checkbox>
+            <!-- </div> -->
+          </div>
+
+          <div class="loginButtonsBox">
+            <button
+              mat-flat-button
+              color="primary"
+              type="submit"
+              class="loginButtons loginButtonUser"
+              aria-label="Login with user credentials"
+            >
+              Login
+            </button>
+            <button
+              mat-stroked-button
+              color="primary"
+              type="button"
+              class="loginButtons loginButtonGuest"
+              (click)="loginAsGuest()"
+              aria-label="Login as guest"
+            >
+              Guest Login
+            </button>
+          </div>
+        </form>
+
+        <div class="signUpField-mobile d-none">
+          <span>Not a join user?</span>
+          <a
+            routerLink="/signup"
+            class="signup-link"
+            aria-label="Navigate to sign up page"
+          >
+            <button mat-flat-button color="primary">Sign up</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="login-footer">
+      <a routerLink="/privacy" aria-label="Open privacy policy">
+        Privacy policy
+      </a>
+      <a routerLink="/legal" aria-label="Open legal notice"> Legal notice </a>
+    </footer>
+  </mat-card>
+</main>

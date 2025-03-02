@@ -1,0 +1,789 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; // Füllt den gesamten Viewport in der Höhe
+  background-color: white; // Hintergrundfarbe (entsprechend Original)
+}
+
+.login-card {
+  border-radius: 30px; 
+  /* padding: 48px 115px; 
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.08);  */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+
+.mat-mdc-unelevated-button:not(:disabled) {
+  background-color: #005dff;
+  border-radius: 8px;
+}
+
+.login-header {
+  position: relative; // Positionierungskontext für absolute Positionierung des Logos
+  display: flex;
+  justify-content: space-between; // Verteilt Logo und Signup-Link
+  align-items: center;
+  width: 100%; // Breite des Headers
+  margin-bottom: 20px; // Abstand zum Formular
+}
+
+.joinLogoBlue {
+  position: absolute; //  Positionierung wie im Original CSS
+  left: 0;
+  top: -15px; //  Feinjustierung der Position
+}
+
+.signUpField {
+  margin-top: 67px;
+  margin-right: 86px;
+  display: flex;
+  align-items: center;
+  gap: 16px; //  Abstand zwischen Text und Button
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; //  Verhindert horizontalen Scrollbalken
+  border-radius: 30px; // Abgerundete Ecken wie im Original
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 39px; // Abstand zwischen Elementen in der Login-Box
+}
+
+.h1LoginBox {
+  display: flex;
+  justify-content: center;
+  position: relative; // Für die absolute Positionierung der Unterlinie
+}
+
+.loginH1 {
+  font-size: 48px; // Schriftgröße wie im Original
+  font-weight: 700; // Schriftgewicht wie im Original
+  padding-bottom: 16px; // Padding unten wie im Original
+  margin: 0; //  Standard-Margin entfernen, um Layout besser zu kontrollieren
+}
+
+.horizontalH1Underline {
+  height: 150px; // Höhe wie im Original
+  border: 3px solid var(--clr-main); // Farbe und Stil wie im Original (TODO: Theming Variable nutzen)
+  rotate: -90deg;
+  position: absolute;
+  z-index: -1;
+  left: 50%; // Zentriert die Linie horizontal
+  bottom: 0; // Positioniert die Linie unten am H1
+}
+
+.innerLoginBox {
+  display: flex;
+  flex-direction: column;
+  gap: 32px; // Abstand zwischen Input-Feldern und Checkbox
+  width: 100%; //  Fülle die Breite der Login-Box aus
+  max-width: 422px; // Maximale Breite der Input-Felder (wie im Original)
+}
+
+.login-input-field {
+  width: 100%; //  Fülle die Breite des Containers aus
+}
+
+.checkboxBox {
+  padding-top: 20px; // Padding oben wie im Original
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px; // Abstand zwischen Checkbox-Icon und Text
+  width: fit-content; //  Breite an Inhalt anpassen
+}
+
+/* Buttons */
+.loginButtonsBox {
+  display: flex;
+  gap: 35px; // Abstand zwischen den Buttons
+  justify-content: center;
+  margin-top: 20px; //  Etwas Abstand zum oberen Bereich
+}
+
+.loginButtons {
+  border-radius: 8px; //  Abgerundete Ecken wie im Original
+  padding: 10px 35px; // Padding wie im Original
+  gap: 10px;
+  font-size: 23px; // Schriftgröße wie im Original
+  cursor: pointer;
+  min-width: 120px; //  Mindestbreite für Buttons
+  text-align: center; // Text zentrieren
+}
+
+.loginButtonUser {
+  color: #fff; // Textfarbe wie im Original
+  background-color: var(
+    --clr-main
+  ); // Hintergrundfarbe wie im Original (TODO: Theming Variable nutzen)
+
+  &:hover {
+    // Hover-Effekt
+    background-color: var(
+      --clr-text-medium-blue
+    ); // Hover Farbe wie im Original (TODO: Theming Variable nutzen)
+    box-shadow: 0px 4px 4px 0px #00000040; // Schattenwurf wie im Original
+  }
+}
+
+.loginButtonGuest {
+  color: #647188; // Textfarbe wie im Original
+  background-color: #fff; // Hintergrundfarbe wie im Original
+  border: 1px solid #647188; // Rahmen wie im Original
+  white-space: nowrap; // Verhindert Zeilenumbruch im Button-Text
+
+  &:hover {
+    // Hover-Effekt
+    border: 1.5px solid var(--clr-main); // Rahmen Hover wie im Original (TODO: Theming Variable nutzen)
+    color: var(
+      --clr-main
+    ); // Text Hover Farbe wie im Original (TODO: Theming Variable nutzen)
+    box-shadow: 0px 4px 4px 0px #00000040; // Schattenwurf wie im Original
+  }
+}
+
+.login-footer {
+  position: fixed;
+  bottom: 26px; // Abstand vom unteren Rand wie im Original
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 16px; // Abstand zwischen Footer-Links
+}
+
+.privacyPolicy,
+.legalNotice {
+  font-size: 16px; // Schriftgröße wie im Original
+  font-weight: 400; // Schriftgewicht wie im Original
+  color: var(
+    --clr-text-menu
+  ); // Farbe wie im Original (TODO: Theming Variable nutzen)
+  transition: transform 0.5s ease; //  Transition wie im Original
+
+  &:hover {
+    // Hover-Effekt
+    color: var(
+      --clr-text-medium-blue
+    ); // Hover Farbe wie im Original (TODO: Theming Variable nutzen)
+    cursor: pointer;
+    font-size: 1rem; // Schriftgröße Hover wie im Original
+  }
+}
+
+.blue-overlay {
+  @import "login.css"; // Importiert die Blue-Overlay Styles aus der originalen CSS Datei
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(
+    --clr-main
+  ); // Hintergrundfarbe wie im Original (TODO: Theming Variable nutzen)
+  color: #fff; // Textfarbe wie im Original
+  opacity: 1;
+  overflow: hidden;
+  z-index: 1;
+  display: flex; // Für die Zentrierung des Logos
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  text-align: center; // Zentriert den Inhalt (Logo)
+}
+
+.joinLogoWhite.logo-animation {
+  // Hier könnten später spezifische Animations-Styles für das Logo hinzukommen, falls benötigt
+}
+
+/*/////////////////////////MOBILE///////////////////////////*/
+@media (max-width: 970px) {
+  .joinLogoBlue img {
+    width: 64px; // Breite Logo Mobile wie im Original
+    height: 78px; // Höhe Logo Mobile wie im Original
+  }
+}
+
+@media (max-width: 769px) {
+  .login-card {
+    padding: 24px 56px; // Padding Login-Box Mobile wie im Original
+    width: auto; // Breite Login-Box Mobile anpassen
+    margin: 32px 12px 0 18px; // Margin Login-Box Mobile (leicht angepasst für Angular Layout)
+  }
+
+  .loginButtonsBox {
+    flex-direction: column; // Buttons untereinander Mobile
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    .loginButtons {
+      // Spezifische Button-Styles für Mobile
+      width: 180px; // Breite Buttons Mobile wie im Original
+      height: 48px; // Höhe Buttons Mobile wie im Original
+      gap: 10px;
+      padding: 10px 10px;
+      text-align: center;
+    }
+  }
+
+  .joinLogoBlue {
+    top: 37px; // Top Position Logo Mobile wie im Original
+    left: 38px; // Left Position Logo Mobile wie im Original
+  }
+
+  .signUpField {
+    display: none; // Signup-Feld Desktop ausblenden
+  }
+
+  .signUpField-mobile {
+    display: flex; // Signup-Feld Mobile einblenden
+    flex-direction: row;
+    align-items: center;
+    width: max-content;
+    gap: 32px;
+    padding: 5px;
+  }
+
+  .signUpField-mobile span,
+  .signUpButton-mobile {
+    font-size: 23px; // Schriftgröße Signup-Text/Button Mobile wie im Original
+    font-weight: 400;
+  }
+
+  .signUpButton-mobile {
+    min-width: 66px; // Min-Breite Signup-Button Mobile wie im Original
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 550px) {
+  .login-card {
+    padding: 32px 16px; // Padding Login-Box noch kleiner für sehr kleine Screens
+  }
+}
+
+@media (max-width: 480px) {
+  .joinLogoBlue img {
+    width: 64px; // Breite Logo sehr kleine Screens wie im Original
+    height: 78px; // Höhe Logo sehr kleine Screens wie im Original
+  }
+
+  .signUpField {
+    display: none; // Signup-Feld Desktop immer noch ausgeblendet
+  }
+
+  .signUpField-mobile {
+    gap: 35px; //  Signup-Feld Mobile Gap wie im Original
+  }
+
+  .signUpField-mobile span,
+  .signUpButton-mobile {
+    font-size: 19px; // Schriftgröße Signup-Text/Button sehr kleine Screens wie im Original
+    font-weight: 400;
+  }
+
+  .signUpButton-mobile {
+    min-width: 66px; // Min-Breite Signup-Button sehr kleine Screens wie im Original
+    white-space: nowrap;
+  }
+
+  .innerLoginBox .mat-form-field {
+    width: 250px; // Breite Input-Felder sehr kleine Screens wie im Original
+  }
+
+  .loginButtonsBox {
+    flex-direction: column; // Buttons untereinander sehr kleine Screens
+    gap: 21px; // Button-Abstand sehr kleine Screens
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-card {
+    border-radius: 30px 30px 0 0; // Abgerundete Ecken unten entfernen für sehr kleine Screens
+  }
+
+  .loginButtons {
+    width: 180px; // Breite Buttons sehr kleine Screens -  etwas größer als Original, um Text besser darzustellen
+    font-size: 19px; // Schriftgröße Buttons sehr kleine Screens - etwas größer als Original
+    font-weight: 400;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .joinLogoBlue {
+    top: 48px; // Top Position Logo sehr kleine Screens wie im Original
+    left: 24px; // Left Position Logo sehr kleine Screens wie im Original
+  }
+
+  .loginH1 {
+    font-size: 48px; // Schriftgröße H1 sehr kleine Screens wie im Original
+  }
+
+  .horizontalH1Underline {
+    height: 132px; // Höhe Unterlinie sehr kleine Screens wie im Original
+  }
+
+  .loginButtons {
+    width: 142px; // Breite Buttons  sehr kleine Screens -  etwas kleiner als vorherige Media Query
+    height: 48px; // Höhe Buttons sehr kleine Screens
+    font-size: 18px; // Schriftgröße Buttons sehr kleine Screens
+    font-weight: 400;
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+* {
+  margin: 0 auto;
+  box-sizing: border-box;
+  /* font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+  font-family: "Open Sans", sans-serif;
+  max-width: 1440px;
+}
+
+.loginMainContainer {
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  background-color: white;
+  height: 100vh;
+}
+
+.loginHeader {
+  position: fixed;
+  top: 67px;
+  right: 86px;
+  display: flex;
+  justify-content: end;
+  width: 100vw;
+}
+
+.joinLogoBlue {
+  position: fixed;
+  left: 77px;
+  top: 80px;
+}
+
+.signUpField {
+  height: fit-content;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+.signUpField span {
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  border-radius: 30px;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid lightgrey;
+  border-radius: 30px;
+  padding: 48px 115px;
+  gap: 39px;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.08);
+}
+
+.login-box input::placeholder {
+  color: #d1d1d1;
+}
+
+.h1LoginBox {
+  display: flex;
+  justify-content: center;
+}
+
+.loginH1 {
+  font-size: 48px;
+  font-weight: 700;
+  padding-bottom: 16px;
+}
+
+.innerLoginBox {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.horizontalH1Underline {
+  height: 150px;
+  border: 3px solid var(--clr-main);
+  rotate: -90deg;
+  position: absolute;
+  z-index: -1;
+  /* left: 50%; */
+}
+
+.loginInputField {
+  display: flex;
+  justify-content: space-between;
+  align-items: self-end;
+  width: 422px;
+  border-bottom: 1px solid #d1d1d1;
+  /* margin-bottom: 24px; */
+  padding: 12px 21px;
+  gap: 34px;
+}
+
+#loginEmailInput,
+#loginPasswordInput {
+  border: none;
+  font-size: 19px;
+  font-weight: 400;
+  padding-top: 12.5px;
+  width: 100%;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+}
+
+.checkboxBox {
+  padding-top: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: min-content;
+}
+
+.custom-checkbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+  gap: 8px;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.custom-checkbox > img:hover {
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 6px rgba(69, 137, 255, 0.6));
+}
+
+.loginButtonsBox {
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+}
+
+.loginButtons {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 35px;
+  gap: 10px;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.signUpButton {
+  color: #fff;
+  background-color: var(--clr-main);
+  gap: 10px;
+}
+
+.loginButtonUser:hover,
+.signUpButton:hover {
+  background-color: var(--clr-text-medium-blue);
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.loginButtonUser {
+  color: #fff;
+  background-color: var(--clr-main);
+}
+
+.loginButtonGuest {
+  color: #647188;
+  /* margin-left: 35px; */
+  background-color: #fff;
+  border: 1px solid #647188;
+  white-space: nowrap;
+}
+
+.loginButtonGuest:hover {
+  border: 1.5px solid var(--clr-main);
+  color: var(--clr-main);
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.loginFooter {
+  position: fixed;
+  bottom: 26px;
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.privacyPolicy,
+.legalNotice {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--clr-text-menu);
+  transition: transform 0.5s ease;
+}
+
+.privacyPolicy:hover,
+.legalNotice:hover {
+  color: var(--clr-text-medium-blue);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 500ms ease-in-out;
+}
+
+.goal {
+  transform: translate(0, 0);
+  transition: all 500ms ease-in-out;
+}
+
+#logo.goal {
+  top: 77px;
+  left: 80px;
+  filter: invert(20%);
+  transform: translate(0, 0);
+}
+
+.goal img {
+  height: 78px;
+  width: 64px;
+  transition: all 500ms ease-in-out;
+}
+
+.blue-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-main);
+  color: #fff;
+  opacity: 1;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/*/////////////////////////MOBILE///////////////////////////*/
+@media (max-width: 970px) {
+  .joinLogoBlue img {
+    width: 64px;
+    height: 78px;
+  }
+}
+
+@media (max-width: 769px) {
+  .login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 61px;
+  }
+
+  .login-box {
+    padding: 24px 56px;
+    width: -webkit-fill-available;
+    /* margin: 32px 12px 0 18px; */
+  }
+
+  .loginEmailBox,
+  .loginPasswordBox {
+    width: auto;
+  }
+
+  .loginButtonsBox {
+    flex-direction: column;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    button {
+      width: 180px;
+      height: 48px;
+      gap: 10px;
+      padding: 10px 10px;
+      text-align: center;
+    }
+  }
+  .joinLogoBlue {
+    top: 37px;
+    left: 38px;
+  }
+
+  .joinLogoBlue img {
+    width: 64px;
+    height: 78px;
+  }
+
+  .signUpField {
+    display: none;
+  }
+
+  .signUpField-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: max-content;
+    gap: 32px;
+    padding: 5px;
+  }
+
+  .signUpField-mobile span,
+  .signUpButton-mobile {
+    font-size: 23px;
+    font-weight: 400;
+  }
+
+  .signUpButton-mobile {
+    min-width: 66px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 550px) {
+  .login-box {
+    padding: 32px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signUpField {
+    display: none;
+  }
+
+  .joinLogoBlue img {
+    width: 64px;
+    height: 78px;
+  }
+
+  .loginEmailBox,
+  .loginPasswordBox {
+    width: fit-content;
+  }
+
+  .signUpField {
+    display: none;
+  }
+
+  .signUpField-mobile {
+    gap: 35px;
+  }
+
+  .signUpField-mobile span,
+  .signUpButton-mobile {
+    font-size: 19px;
+    font-weight: 400;
+  }
+
+  .signUpButton-mobile {
+    min-width: 66px;
+    white-space: nowrap;
+  }
+
+  .loginInputField {
+    width: 250px;
+  }
+
+  .loginButtonsBox {
+    flex-direction: column;
+    gap: 21px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-page {
+    border-radius: 30px 30px 0 0;
+  }
+
+  .loginButtons {
+    width: 180px;
+    font-size: 19px;
+    font-weight: 400;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .loginButtonUser,
+  .loginButtonGuest {
+    margin-left: 0;
+  }
+
+  .joinLogoBlue {
+    top: 48px;
+    left: 24px;
+  }
+
+  #loginEmailInput,
+  #loginPasswordInput {
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    padding-top: 12.5px;
+    width: 160px;
+  }
+
+  .horizontalH1Underline {
+    height: 132px;
+  }
+
+  .loginH1 {
+    font-size: 48px;
+  }
+
+  .loginButtons {
+    width: 142px;
+    height: 48px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 0;
+    text-align: center;
+  }
+}

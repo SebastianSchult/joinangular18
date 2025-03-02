@@ -1,38 +1,45 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MaterialModule } from '../shared/modules/material.module';
-import { ReactiveFormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  standalone: true,
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
-  imports: [MaterialModule, ReactiveFormsModule], 
+    standalone: true,
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    imports: [MaterialModule, ReactiveFormsModule, CommonModule, FormsModule],
 })
 export class LoginComponent {
-  loginForm: FormGroup; 
+    loginForm: FormGroup;
 
-  constructor(
-    private fb: FormBuilder,
-    private router: Router
-  ) {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-      rememberMe: [false]
-    });
-  }
-
-  async onSubmit() {
-    if (this.loginForm.valid) {
-      try {
-        // await this.authService.login(this.loginForm.value);
-        this.router.navigate(['/dashboard']);
-      } catch (error) {
-        // Fehlerbehandlung
-      }
+    constructor(
+        private fb: FormBuilder,
+        private router: Router
+    ) {
+        this.loginForm = this.fb.group({
+            email: ['', [Validators.required, Validators.email]],
+            password: ['', Validators.required],
+            rememberMe: [false]
+        });
     }
-  }
+
+    async onSubmit() {
+        if (this.loginForm.valid) {
+            try {
+                console.log('Login Form Value:', this.loginForm.value); 
+                this.router.navigate(['/summary']); 
+            } catch (error) {
+                console.error('Login Fehler:', error);
+                // TODO: Benutzerfreundliche Fehleranzeige implementieren (z.B. MatSnackBar)
+            }
+        } else {
+            console.log('Formular ist ungültig');
+        }
+    }
+
+    loginAsGuest() {
+        this.router.navigate(['/summary']);  }
 }
