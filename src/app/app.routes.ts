@@ -8,7 +8,7 @@ import { LegalNoticeComponent } from './shared/pages/legal-notice/legal-notice.c
 import { PrivacyComponent } from './shared/pages/privacy/privacy.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'board', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'board', component: BoardComponent },
   { path: 'add-task', component: AddTaskComponent },

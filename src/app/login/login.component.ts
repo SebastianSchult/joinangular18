@@ -6,11 +6,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
-    standalone: true,
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
-    imports: [MaterialModule, ReactiveFormsModule, CommonModule, FormsModule],
+    imports: [MaterialModule, ReactiveFormsModule, CommonModule, FormsModule]
 })
 export class LoginComponent {
     loginForm: FormGroup;

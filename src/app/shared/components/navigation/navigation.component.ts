@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-navigation',
-  standalone: true,
-  imports: [],
-  templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.scss'
+    selector: 'app-navigation',
+    imports: [],
+    templateUrl: './navigation.component.html',
+    styleUrl: './navigation.component.scss'
 })
 export class NavigationComponent {
 

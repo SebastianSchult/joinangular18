@@ -1,0 +1,115 @@
+.loginMainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+  }
+  
+  .login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 30px;
+    padding: 48px 115px;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+  }
+  
+  .h1LoginBox {
+    text-align: center;
+    position: relative;
+  }
+  
+  .loginH1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  
+  .horizontalH1Underline {
+    width: 100%;
+    height: 3px;
+    background-color: var(--clr-main);
+    margin-bottom: 32px;
+  }
+  
+  .innerLoginBox {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .loginInputField {
+    display: flex;
+    align-items: center;
+    width: 422px;
+    border-bottom: 1px solid #d1d1d1;
+    padding: 12px 21px;
+  }
+  
+  .loginInputField input {
+    flex: 1;
+    border: none;
+    font-size: 19px;
+    outline: none;
+  }
+  
+  .mailIcon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .checkboxBox {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  
+  .loginButtonsBox {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    margin-top: 32px;
+  }
+  
+  .loginButtons {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 35px;
+    font-size: 23px;
+    cursor: pointer;
+  }
+  
+  .loginButtonUser {
+    background-color: var(--clr-main);
+    color: #fff;
+  }
+  
+  .loginButtonGuest {
+    background-color: #fff;
+    color: #647188;
+    border: 1px solid #647188;
+  }
+  
+  .loginFooter {
+    position: fixed;
+    bottom: 26px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  .privacyPolicy, .legalNotice {
+    font-size: 16px;
+    cursor: pointer;
+  }
